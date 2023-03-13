@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.hero {
+    height: 100vh;
+    width: 100%;
+    border: none;
+}
+
+#empty-fox, #full-fox {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+
+
+#empty-fox {
+    background-color: orange
+}
+
+#full-fox {
+    background-color: gold
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    text-align: center;
+}
+
+.hero-content h2 {
+    font-size: 60px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.hero-content h3 {
+    font-size: 24px;
+    font-family: "Source Code Pro", monospace;
+}
+
+.hero button {
+    all: unset;
+
+    position: absolute;
+    left: 50%;
+    translate: -50% 0;
+    bottom: 50px;
+    background-color: aquamarine;
+    padding: 20px 80px;
+    font-size: 40px;
+    cursor: pointer;
+    border-radius: 10px;
+}
