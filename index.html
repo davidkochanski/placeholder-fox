@@ -11,8 +11,9 @@
 
     <link rel="stylesheet" href="style/style.css">
     <script defer src="script/showAnimation.js"></script>
+    <script defer src="script/showOnScroll.js"></script>
 
-    <title>{ placeholderfox }</title>
+    <title>&lt; placeholderfox &gt;</title>
 </head>
 <body>
     <div class="hero" id="hero">
@@ -35,19 +36,22 @@
 
     <main>
         <section id="get-fox">
-            <div class="header">
+            <div class="p-group">
                 <p>Get a custom sized, high quality fox image to use as a placeholder when developing!</p>
+                <p>Here's an example:</p>
             </div>
             
             <div class="fox-content">
-                <div class="code code-type">
-                    <p>
-                        https://<span class="n">placefox.com</span>/<span class="w">400</span>/<span class="h">600</span>/<span class="t">fennec</span>
-                    </p>
-                </div>
+                <a href="#">
+                    <div class="code code-type">
+                        <p id="top-code-type">
+                            https://<span class="n">placefox.com</span>/<span class="w">400</span>/<span class="h">600</span>/<span class="t">fennec</span>
+                        </p>
+                    </div>
+                </a>
                 
                 <div class="fox-image">
-                    <img class="fox" src="img/fen2.jpeg" alt="">
+                    <img class="fox" id="fox-img" src="img/fen2.jpeg" alt="">
                 </div>
             </div>
 
@@ -55,8 +59,76 @@
         </section>
 
         <section id="guide">
-            
+            <h2>Fox Instruction Manual</h2>
 
+            <div class="code">
+                <p>
+                    https://<span class="n">placefox.com</span>/<span class="w">300</span>/<span class="h">450</span>/<span class="t">red</span><span class="c">-bw</span></span>
+                </p>
+            </div>
+
+            <div class="guide-array">
+                <div class="guide-card">
+                    <div class="code">
+                        <p>../<span class="w">width</span>/<span class="h">height</span>/..</p>
+                    </div>
+                    <div class="guide-content">
+                        <h3>Dimensions of the image.</h3>
+                        <p>Within <span class="inline-code">100</span>-<span class="inline-code">1000</span> inclusive</p>
+                        <p>Measured in pixels; must be in 10px increments (100, 110, 120 ...)</p>
+                        
+                    </div>
+
+
+                </div>
+                <div class="guide-card">
+                    <div class="code">
+                        <p>../<span class="t">type</span>-filter/</p>
+                    </div>
+
+                    <div class="guide-content">
+                        <h3>What type of fox?</h3>
+                        <p>This is optional: Leave blank for default <span class="inline-code">red</span> fox.</p>
+                        <p>One of: <span class="inline-code">red</span>, <span class="inline-code">arctic</span>, <span class="inline-code">fennec</span>.</p>
+                        <p></p>
+                        
+                    </div>
+
+                </div>
+                <div class="guide-card">
+                    <div class="code">
+                        <p>../type<span class="c">-filter</span>/</p>
+                    </div>
+
+                    <div class="guide-content">
+                        <h3>Which image filter?</h3>
+                        
+                        <p>This is optional: Leave blank for default in full colour.</p>
+                        <p>Must specify fox type first in order to use a filter.</p>
+                        <p>One of: <span class="inline-code">bw</span> (black and white), <span class="inline-code">one</span> (1-bit image).</p>
+                        
+                    </div>
+
+                </div>
+
+                <div class="guide-card">
+                    <div class="code">
+                        <p>..//placefox.com/<span class="x">3</span>/</p>
+                    </div>
+
+                    <div class="guide-content">
+                        <h3>Wildcard</h3>
+                        
+                        <p>Just want an image and don't care about the nitty gritty?</p>
+                        <p>Use just a number <span class="inline-code">0</span>-<span class="inline-code">15</span> for an instant image!</p>
+                        <p><em>Generally,</em> the images will roughly increase in size as you go from 0 to 15.</p>
+                        
+                    </div>
+
+                </div>
+            </div>
+
+            
         </section>
 
         <section id="random-fox">

@@ -2,6 +2,7 @@
     --linen: #fcf5ef;
     --orange: #fea735;
     --dark-orange: #fe7235;
+    --blue: #00c3ff;
     --aqua: #94eac6;
     --mid-aqua: #66ddaa;
     --dark-aqua: #28bb94;;
@@ -116,27 +117,36 @@ html, body {
 }
 
 main > section {
-    min-height: 100vmin;
     padding: 0 5px;
     width: min(1200px, 100%);
-    margin: 0 auto;
+    margin: 50px auto;
+    position: relative;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-#get-fox {
-
-
+section h2 {
+    width: 100%;
+    text-align: center;
+    font-size: 60px;
 }
 
-#get-fox > .header {
+#get-fox {
+    min-height: 100vmin;
+}
+
+.p-group {
     text-align: center;
     font-size: 20px;
     margin-bottom: 100px;
     padding-top: 100px;
     
+}
+
+#guide {
+    gap: 60px;
 }
 
 .fox-content {
@@ -146,35 +156,26 @@ main > section {
 
 }
 
-.fox-content > .fox-content-code {
-    flex: 4;
-    outline: 1px solid red;
-}
-
-.fox-content > .fox-content-image {
-    flex: 2;
-    outline: 1px solid blue;
-}
-
 .code {
-    background-color: #3e3e42;
+    background-color: #3e3e42 !important;
     font-family: "Source Code Pro", monospace;
     color: #ccc;
-    width: 100%;
+    width: fit-content;
     height: fit-content;
     padding: 20px;
     font-size: 18px;
     border-radius: 10px;
     border: 5px solid black;
     box-shadow: 0 5px 0 black;
+    letter-spacing: 3px;
+    margin: 0 auto;
+    padding-right: 100px;
+
 }
 
 .code-type p {
-    overflow: hidden; /* Ensures the content is not revealed until the animation */
-    white-space: nowrap; /* Keeps the content on a single line */
-    letter-spacing: .15em; /* Adjust as needed */
-    animation: 
-      typing 1.5s steps(40, end)
+    overflow: hidden;
+    white-space: nowrap; 
 }
 
 .fox-content .fox-image {
@@ -199,13 +200,20 @@ main > section {
     margin: 0 auto;
     opacity: 0;
 
-    animation: fade-in 0.75s ease-out 1s forwards;
+}
+
+.show-fox-img {
+    animation: fade-in 0.75s ease-out 0.75s forwards;
+}
+
+.show-top-code-type {
+    animation: typing 1.5s steps(40, end)
 }
 
 
 @keyframes typing {
     from { width: 0 }
-    to { width: 100%; }
+    to { width: 100%}
 }
 
 @keyframes fade-in {
@@ -228,6 +236,8 @@ main > section {
     content: "> ";
 }
 
+
+
 span.w {
     color: var(--orange);
 }
@@ -236,10 +246,97 @@ span.h {
     color: var(--dark-orange);
 }
 
+span.n {
+    color: var(--dark-aqua);
+}
+
+
+span.c {
+    color: var(--blue);
+}
+
 span.t {
     color: var(--aqua);
 }
 
-span.n {
-    color: var(--dark-aqua);
+span.x {
+    color: hotpink;
+}
+
+
+.code-placeholder {
+    color: #3e3e42 !important;
+}
+
+.guide-array {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 4%;
+
+}
+
+.guide-array > .guide-card {
+    flex: 1;
+    border: 5px solid black;
+    box-shadow: 5px 5px 0 #000000;
+    border-radius: 16px;
+}
+
+.guide-card {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.guide-card .code {
+    border: none;
+    width: 100%;
+    border-radius: 8px 8px 0 0;
+    padding-right: 20px;
+    color: #6f6f6f;
+    position: absolute;
+    top: 0;
+}
+
+.guide-array > div:nth-of-type(1) {
+    background-color: var(--orange);
+}   
+.guide-array > div:nth-of-type(2) {
+    background-color: var(--aqua);
+}   
+.guide-array > div:nth-of-type(3) {
+    background-color: var(--blue);
+}   
+.guide-array > div:nth-of-type(4) {
+    background-color: hotpink;
+}   
+
+.guide-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+    padding: 80px 2% 20px;
+    gap: 20px;
+}
+
+.guide-content p {
+    font-size: 20px;
+    text-align: center;
+}
+
+.guide-content h3 {
+    width: 100%;
+    margin: 0 auto;
+    font-size: 24px;
+    text-align: center;
+}
+
+.inline-code {
+    font-family: "Source Code Pro", monospace;
+    background-color: rgba(0 0 0 / 0.2);
+    padding: 5px;
+    border-radius: 5px;
+    font-size: inherit;
 }
