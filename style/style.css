@@ -14,6 +14,9 @@
     box-sizing: border-box;
 }
 
+a {
+    text-decoration: none;
+}
 
 .hero {
     height: 100vh;
@@ -96,7 +99,7 @@ html, body {
     cursor: pointer;
     border-radius: 10px;
     
-    transition: translate 0.25s ease, box-shadow 0.25s ease;
+    transition: translate 0.25s ease, box-shadow 0.25s ease, background-color 0.1s ease;
 }
 
 .hero a {
@@ -110,7 +113,10 @@ html, body {
 .hero a:hover, button:hover {
     box-shadow: none;
     translate: 0 5px;
+}
 
+.hero a:active, button:active {
+    background: var(--dark-aqua)
 }
 
 .hero .hero-footer {
@@ -195,7 +201,7 @@ section h2 {
 
 }
 
-.fox-content .fox-image img.fox {
+.fox-image img.fox {
     width: 400px;
     height: 600px;
     border-radius: 25px;
@@ -350,10 +356,63 @@ span.x {
     font-size: inherit;
 }
 
+.code-hover {
+    transition: translate 0.25s ease, box-shadow 0.25s ease;
+}
+
+.code-hover:hover {
+    box-shadow: none;
+    translate: 0 5px;
+}
+
 .random-url {
     display: flex;
-    margin: 0 auto;
+    width: 100%;
     gap: 40px;
     align-items: center;
 }
 
+.random-url .code {
+    width: 100%;
+}
+
+.random-url .code {
+    padding-right: 0 !important;
+}
+
+.random-url button {
+    width: 200px;
+}
+
+.random-url button {
+    position: relative;
+}
+
+.random-url button i {
+    position: absolute;
+    font-size: 28px;
+    left: 20px;
+}
+
+.random-url button .button-content {
+    text-align: right;
+}
+
+#random-fox {
+    min-height: 100vh;
+    justify-content: flex-start;
+}
+
+.fox-image {
+    margin: 0 auto;
+}
+
+.fox-image img#random-fox-image {
+    opacity: 1;
+    width: unset;
+    height: unset;
+    max-height: 90vh;
+    max-width: 90%;
+    rotate: 0deg;
+
+}

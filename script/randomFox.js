@@ -1,10 +1,13 @@
 const button = document.getElementById("new-fox");
 const randomUrl = document.getElementById("random-code");
+const foxImage = document.getElementById("random-fox-image");
 
 button.onmousedown = () => {
-    button.style.backgroundColor = "red";
+    newFox = getNewFox();
 
-    randomUrl.innerHTML = getNewFox();
+    randomUrl.innerHTML = newFox;
+
+    // foxImage.src = newFox;
 
 }
 
@@ -16,13 +19,18 @@ const types = ["red", "arctic", "fennec"];
 const filters = ["", "", "", "-bw", "-one"]
 
 const getNewFox = () => {
-    const width = 10 * randomFromRange(10, 100);
-    const height = 10 * randomFromRange(10, 100);
+    if(!randomFromRange(0, 10)) {
+        return `https://<span class="n">placefox.com</span>/<span class="x">${randomFromRange(0,16)}</span>/`
+    }
 
-    const type = types[randomFromRange(0, types.length)]
-    const filter = filters[randomFromRange(0, filters.length)]
+    const width = `<span class="w">${10 * randomFromRange(10, 100)}</span>`;
+    const height = `<span class="h">${10 * randomFromRange(10, 100)}</span>`;
 
-    return `https://randomfox.com/${width}/${height}/${type}${filter}/`;
+
+    const type = `<span class="t">${types[randomFromRange(0, types.length)]}</span>`;
+    const filter = `<span class="c">${filters[randomFromRange(0, filters.length)]}</span>`;
+
+    return `https://<span class="n">placefox.com</span>/${width}/${height}/${type}${filter}/`;
 
 
 
