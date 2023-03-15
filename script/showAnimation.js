@@ -1,8 +1,8 @@
-document.onmousemove = e => {
-    const emptyFox = document.getElementById("empty-fox");
-    const emptyHeader = document.querySelector(".hero .hero-content.empty-content");
-    const fullHeader = document.querySelector(".hero .hero-content.full-content");
+const emptyFox = document.getElementById("empty-fox");
+const emptyHeader = document.querySelector(".hero .hero-content.empty-content");
+const fullHeader = document.querySelector(".hero .hero-content.full-content");
 
+document.onmousemove = e => {
     let x = e.clientX;
     let width = window.innerWidth;
 

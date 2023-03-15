@@ -28,6 +28,7 @@ html, body {
     scroll-behavior: smooth;
     font-family: 'Lato', sans-serif;
     background-color: var(--linen);
+    overflow-x: hidden;
 }
 
 #empty-fox, #full-fox {
@@ -176,6 +177,7 @@ section h2 {
     font-family: "Source Code Pro", monospace;
     color: #ccc;
     width: fit-content;
+    max-width: 100%;
     height: fit-content;
     padding: 20px;
     font-size: 18px;
@@ -227,10 +229,9 @@ section h2 {
 
 
 @keyframes typing {
-    from { width: 0 }
-    to { width: 100%}
+    from { clip-path: inset(0 100% 0 0)}
+    to { clip-path: inset(0 100% 0 100%)}
 }
-
 @keyframes fade-in {
     from {
         translate: 0 30px;
@@ -381,11 +382,9 @@ span.x {
 }
 
 .random-url button {
-    width: 200px;
-}
-
-.random-url button {
+    width: 150px;
     position: relative;
+
 }
 
 .random-url button i {
@@ -415,4 +414,40 @@ span.x {
     max-width: 90%;
     rotate: 0deg;
 
+}
+
+
+@media only screen and (max-width: 900px) {
+    .random-url {
+        flex-direction: column;
+    }
+
+    .guide-array {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+    }
+
+    .code {
+        padding: 20px 5px;
+        letter-spacing: 1px;
+        font-size: 16px;
+        width: calc(100%);
+    }
+
+    .code p {
+        display: block;/* Change it as per your requirement. */
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        direction: rtl;
+        text-align: left;
+    }
+
+    .code p:before {
+        content: ""
+    }
+
+    .code p::after {
+        content: "> "
+    }
 }
