@@ -11,27 +11,40 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="stylesheet" href="style/style.css">
+    
     <script defer src="script/showAnimation.js"></script>
     <script defer src="script/showOnScroll.js"></script>
     <script defer src="script/randomFox.js"></script>
+    <script defer src="script/darkToggle.js"></script>
 
     <title>&lt; placeholderfox /&gt;</title>
 </head>
 <body>
+    <nav>
+        <div id="darkmode-button">
+            <i class="fas fa-sun"></i>
+
+        </div>
+        <div id="dropdown-button">
+            <i class="fas fa-bars"></i>
+
+        </div>
+    </nav>
+
     <div class="hero" id="hero">
         <img id="full-fox" src="img/fox-full.png" alt="">
         <img id="empty-fox" src="img/fox-empty.png" alt="">
 
         <div class="hero-content full-content">
-            <h2>🦊</h2>
+            <h1>🦊</h1>
             <h3>For Developers</h3>
         </div>
 
         <div class="hero-content empty-content">
-            <h2>Placeholder Fox <br>Images.</h2>
+            <h1>Placeholder Fox <br>Images.</h1>
         </div>
 
-        <a type="button" href="#get-fox">
+        <a type="button" href="#get-fox" draggable="false">
             Get a Fox
         </a>
     </div>
@@ -40,13 +53,12 @@
         <section id="get-fox">
             <div class="p-group">
                 <p>Get a custom sized, high quality fox image to use as a placeholder when developing!</p>
-                <p>Here's an example:</p>
             </div>
             
             <div class="fox-content">
                 <a href="#">
-                    <div class="code code-type">
-                        <p id="top-code-type">
+                    <div class="code code-type code-hover">
+                        <p id="top-code-type" class="trunc">
                             https://<span class="n">placefox.com</span>/<span class="w">400</span>/<span class="h">600</span>/<span class="t">fennec</span>.jpg
                         </p>
                     </div>
@@ -64,9 +76,11 @@
             <h2>Fox Instruction Manual</h2>
 
             <div class="code">
-                <p> 
-                    // example<br>
-                    > https://<span class="n">placefox.com</span>/<span class="w">300</span>/<span class="h">450</span>/<span class="t">red</span><span class="c">-bw</span>.jpg</span>
+                <p>
+                    //&nbsp;example 
+                </p>
+                <p class="trunc"> 
+                    https://<span class="n">placefox.com</span>/<span class="w">300</span>/<span class="h">450</span>/<span class="t">red</span><span class="c">-bw</span>.jpg</span>
                 </p>
             </div>
 
@@ -135,23 +149,25 @@
         </section>
 
         <section id="random-fox">
-            <h2>Random Fox Gen</h2>
+            <h2>Example Fox Generator</h2>
 
                 <div class="random-url">
                     <a href="https://placefox.com/400/600/fennec" target="_blank" style="width: 100%">
 
                         <div class="code code-hover">
-                            <p id="random-code">
-                                // click me to check out!<br>
-                                > https://<span class="n">placefox.com</span>/<span class="w">400</span>/<span class="h">600</span>/<span class="t">fennec</span>.jpg
+                            <p>
+                                // click me to check out!
+                            </p>
+                            <p id="random-code" class="trunc">
+                                https://<span class="n">placefox.com</span>/<span class="w">400</span>/<span class="h">600</span>/<span class="t">fennec</span>.jpg
                             </p>
                         </div>
                     </a>
 
                     <button id="new-fox" type="button">
-                        <i class="fa-solid fa-dice-five"></i>
                         <div class="button-content">
-                            New Fox!
+                            <i class="fa-solid fa-dice-five"></i>
+                            New Fox
                         </div>
                     </button>
                 </div>

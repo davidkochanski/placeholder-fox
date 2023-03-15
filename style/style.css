@@ -18,18 +18,76 @@ a {
     text-decoration: none;
 }
 
-.hero {
-    height: 100vh;
-    width: 100%;
-    border: none;
-}
-
 html, body {
     scroll-behavior: smooth;
     font-family: 'Lato', sans-serif;
     background-color: var(--linen);
     overflow-x: hidden;
 }
+
+.dark {
+    background-color: #222;
+    /* scrollbar-color: #222 #555; */
+    color-scheme: dark;
+}
+
+.dark p, .dark h2 {
+    color: white;
+}
+
+.dark nav > :first-child {
+    background-color: white;
+}
+
+*::-webkit-scrollbar-track {
+    background: #222;
+}
+
+*::-webkit-scrollbar-thumb {
+    background: #555;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    padding: 10px;
+    gap: 10px;
+}
+
+nav > div {
+    border-radius: 50%;
+    padding: 16px;
+    display: grid;
+    place-content: center;
+    cursor: pointer;
+}
+
+nav > :first-child {
+    background-color: var(--orange);
+}
+
+nav > :last-child {
+    background-color: var(--aqua);
+}
+
+nav i {
+    display: block;
+    text-align: center;
+    font-size: 30px;
+    width: 30px;
+    height: 30px;
+}
+
+.hero {
+    height: 100vh;
+    width: 100%;
+    border: none;
+}
+
+
 
 #empty-fox, #full-fox {
     height: 100%;
@@ -62,7 +120,7 @@ html, body {
     text-align: center;
 }
 
-.hero-content h2 {
+.hero-content h1 {
     font-size: 60px;
     width: 100%;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -99,6 +157,8 @@ html, body {
     font-size: 24px;
     cursor: pointer;
     border-radius: 10px;
+    user-select: none;
+    pointer-events: auto;
     
     transition: translate 0.25s ease, box-shadow 0.25s ease, background-color 0.1s ease;
 }
@@ -145,15 +205,11 @@ section h2 {
     font-size: 60px;
 }
 
-#get-fox {
-    min-height: 100vmin;
-}
-
 .p-group {
     text-align: center;
     font-size: 26px;
     margin-bottom: 100px;
-    padding-top: 100px;
+    padding: 0 10px;
 }
 
 .p-group p:last-of-type {
@@ -168,7 +224,6 @@ section h2 {
 .fox-content {
     display: flex;
     flex-direction: column;
-    height: 70vh;
 
 }
 
@@ -204,6 +259,7 @@ section h2 {
 }
 
 .fox-image img.fox {
+    object-fit: cover;
     width: 400px;
     height: 600px;
     border-radius: 25px;
@@ -242,17 +298,15 @@ section h2 {
     }
 }
 
-  
-
 .code span {
     color: white;
 }
 
 .code p::before {
     content: "> ";
+    color: #ccc;
+
 }
-
-
 
 span.w {
     color: var(--orange);
@@ -382,19 +436,21 @@ span.x {
 }
 
 .random-url button {
-    width: 150px;
+    width: 200px;
     position: relative;
+    padding: 20px 10px;
 
 }
 
 .random-url button i {
-    position: absolute;
     font-size: 28px;
-    left: 20px;
 }
 
 .random-url button .button-content {
-    text-align: right;
+    display: flex;
+    padding: 0;
+    white-space: nowrap;
+    justify-content: space-evenly;
 }
 
 #random-fox {
@@ -417,7 +473,7 @@ span.x {
 }
 
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 768px) {
     .random-url {
         flex-direction: column;
     }
@@ -425,6 +481,11 @@ span.x {
     .guide-array {
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr 1fr 1fr;
+        gap: 20px;
+    }
+
+    .guide-array > * {
+        translate: -0.5% 0;
     }
 
     .code {
@@ -434,8 +495,7 @@ span.x {
         width: calc(100%);
     }
 
-    .code p {
-        display: block;/* Change it as per your requirement. */
+    .code p.trunc {
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
@@ -443,11 +503,17 @@ span.x {
         text-align: left;
     }
 
-    .code p:before {
-        content: ""
+    .code p.trunc::before {
+        content: "";
     }
 
-    .code p::after {
-        content: "> "
+    .code p.trunc::after {
+        content: " <";
+        color: #ccc;
+    }
+
+    .fox-image img.fox {
+        width: 300px;
+        height: 450px;
     }
 }
