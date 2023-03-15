@@ -3,11 +3,11 @@ const randomUrl = document.getElementById("random-code");
 const foxImage = document.getElementById("random-fox-image");
 
 button.onmousedown = () => {
-    newFox = getNewFox();
+    let [ newFox, newFoxUrl ] = getNewFox();
 
     randomUrl.innerHTML = newFox;
 
-    // foxImage.src = newFox;
+    // foxImage.src = newFoxUrl;
 
 }
 
@@ -20,17 +20,20 @@ const filters = ["", "", "", "-bw", "-one"]
 
 const getNewFox = () => {
     if(!randomFromRange(0, 10)) {
-        return `https://<span class="n">placefox.com</span>/<span class="x">${randomFromRange(0,16)}</span>/`
+        num = randomFromRange(0,16)
+
+        return [`// click me to check out!<br>> https://<span class="n">placefox.com</span>/<span class="x">${num}</span>.jpg`,
+                `https://placefox.com/${num}.jpg`]
     }
+    const width = 10 * randomFromRange(10, 100);
+    const height = 10 * randomFromRange(10, 100);
 
-    const width = `<span class="w">${10 * randomFromRange(10, 100)}</span>`;
-    const height = `<span class="h">${10 * randomFromRange(10, 100)}</span>`;
 
+    const type = types[randomFromRange(0, types.length)];
+    const filter = filters[randomFromRange(0, filters.length)];
 
-    const type = `<span class="t">${types[randomFromRange(0, types.length)]}</span>`;
-    const filter = `<span class="c">${filters[randomFromRange(0, filters.length)]}</span>`;
-
-    return `https://<span class="n">placefox.com</span>/${width}/${height}/${type}${filter}/`;
+    return [`// click me to check out!<br>> https://<span class="n">placefox.com</span>/<span class="w">${width}</span>/<span class="h">${height}</span>/<span class="t">${type}</span><span class="c">${filter}</span>.jpg`,
+            `https://placefox.com//${width}/${height}/${type}${filter}.jpg`];
 
 
 
