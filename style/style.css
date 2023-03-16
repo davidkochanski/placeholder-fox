@@ -5,7 +5,8 @@
     --blue: #00c3ff;
     --aqua: #94eac6;
     --mid-aqua: #66ddaa;
-    --dark-aqua: #28bb94;;
+    --dark-aqua: #28bb94;
+    --gray: #3e3e42;
 }
 
 * {
@@ -266,7 +267,7 @@ section h2 {
 }
 
 .code {
-    background-color: #3e3e42 !important;
+    background-color: var(--gray) !important;
     font-family: "Source Code Pro", monospace;
     color: #ccc;
     width: fit-content;
@@ -373,7 +374,7 @@ span.x {
 
 
 .code-placeholder {
-    color: #3e3e42 !important;
+    color: var(--gray) !important;
 }
 
 .guide-array {
@@ -387,7 +388,7 @@ span.x {
 .guide-array > .guide-card {
     flex: 1;
     border: 5px solid black;
-    box-shadow: 5px 5px 0 #000000;
+    box-shadow: 5px 5px 0 black;
     border-radius: 16px;
 }
 
