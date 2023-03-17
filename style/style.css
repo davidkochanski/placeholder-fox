@@ -73,7 +73,8 @@ nav > :first-child {
 
 nav > :last-child {
     background-color: var(--mid-aqua);
-    transition: border-radius 0.25s ease
+    transition: border-radius 0.25s ease;
+    position: relative;
 
 }
 
@@ -85,13 +86,24 @@ nav i {
     height: 30px;
 }
 
-nav > :last-child:hover {
+nav input:checked + :last-child {
     border-radius: 50% 50% 0 0;
 }
 
-nav > :last-child:hover > ul {
+nav input:checked + :last-child > ul {
     scale: 1;
     opacity: 1;
+}
+
+nav input {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    z-index: 600;
+    opacity: 0;
+    cursor: pointer;
 }
 
 nav ul {
@@ -100,8 +112,8 @@ nav ul {
     scale: 0;
     opacity: 0;
     position: absolute;
-    top: 70px;
-    right: 10px;
+    top: 60px;
+    right: 0;
     background-color: var(--mid-aqua);
     list-style: none;
     border-radius: 16px 0 16px 16px;
