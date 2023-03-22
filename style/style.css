@@ -314,6 +314,17 @@ section h2 {
     margin: 100px auto;
 }
 
+#guide {
+    width: 100%;
+    margin-top: 0;
+    padding-top: 100px;
+    background-color: #ffcf90;
+}
+
+.dark #guide {
+    background-color: #2e2639;
+}
+
 .fox-content {
     display: flex;
     flex-direction: column;
@@ -436,6 +447,8 @@ span.x {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     gap: 4%;
+    max-width: 1200px;
+    margin: 0 auto;
 
 }
 
