@@ -34,8 +34,4 @@ const getNewFox = () => {
 
     return [`https://<span class="n">placefox.com</span>/<span class="w">${width}</span>/<span class="h">${height}</span>/<span class="t">${type}</span><span class="c">${filter}</span>.jpg`,
             `https://placefox.com//${width}/${height}/${type}${filter}.jpg`];
-
-
-
-
 }
