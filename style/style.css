@@ -29,7 +29,7 @@ html, body {
 
 .dark {
     background-color: #222;
-    /* scrollbar-color: #222 #555; */
+    scrollbar-color: #222 #555;
     color-scheme: dark;
 }
 
@@ -317,7 +317,7 @@ section h2 {
 #guide {
     width: 100%;
     margin-top: 0;
-    padding-top: 100px;
+    padding: 100px 0;
     background-color: #ffcf90;
 }
 
