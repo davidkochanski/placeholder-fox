@@ -35,7 +35,7 @@ const filters = ["", "", "", "-bw", "-one"]
 const getNewFox = () => {
     // Wildcard chance
     if(!randomFromRange(0, 10)) {
-        num = randomFromRange(0,16)
+        num = randomFromRange(0,16);
 
         return [`https://<span class="n">placefox.it</span>/<span class="x">${num}</span>.jpg`,
                 `https://placefox.it/${num}.jpg`]
