@@ -273,14 +273,6 @@ footer a:hover {
     background: var(--dark-aqua)
 }
 
-.hero .hero-footer {
-    position: absolute;
-    display: block;
-    left: 50%;
-    translate: -50% 0;
-    bottom: 0;
-}
-
 main > section {
     padding: 0 5px;
     width: min(1200px, 100%);
@@ -301,12 +293,12 @@ section h2 {
 .p-group {
     text-align: center;
     font-size: 26px;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
     padding: 0 10px;
 }
 
 .p-group p:last-of-type {
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
 #guide, #random-fox {
