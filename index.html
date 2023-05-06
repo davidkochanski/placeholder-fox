@@ -17,6 +17,7 @@
     <script defer src="script/showOnScroll.js"></script>
     <script defer src="script/randomFox.js"></script>
     <script defer src="script/darkToggle.js"></script>
+    <script defer src="script/guideHover.js"></script>
 
     <title>&lt; placefox.it /&gt;</title>
 </head>
@@ -59,8 +60,8 @@
     <main>
         <section id="get-fox">
             <div class="p-group">
-                <p>Get a fox image to use as a placeholder when developing!</p>
-                <p>Custom sizes and styles available, all straight from a URL.</p>
+                <p>Need a quick placeholder image when designing or developing?</p>
+                <p>Get a fox image, customized to your needed size and style, all conveniently from a URL.</p>
             </div>
             
             <div class="fox-content">
@@ -73,7 +74,7 @@
                 </a>
                 
                 <div class="fox-image">
-                    <img class="fox" id="fox-img" src="img/fen2.jpeg" alt="">
+                    <img class="fox" id="fox-img" src="400/600/fennec.jpg" alt="">
                 </div>
             </div>
 
@@ -81,15 +82,19 @@
         </section>
 
         <section id="guide">
-            <h2>Fox Instruction Manual</h2>
+            <h2>Guide</h2>
 
-            <div class="code">
+            <div class="code" id="example-code">
                 <p>
                     //&nbsp;example 
                 </p>
                 <p class="trunc"> 
                     https://<span class="n">placefox.it</span>/<span class="w">300</span>/<span class="h">450</span>/<span class="t">red</span><span class="c">-bw</span>.jpg</span>
                 </p>
+                <p class="trunc" style="display: none;"> 
+                    https://<span class="n">placefox.it</span>/<span class="x">3</span>.jpg<span class="code-placeholder">.............</span></span>
+                </p>
+                
             </div>
 
             <div class="guide-array">
@@ -99,8 +104,9 @@
                     </div>
                     <div class="guide-content">
                         <h3>Dimensions of the image.</h3>
-                        <p>Within <span class="inline-code">100</span>&ndash;<span class="inline-code">1000</span> inclusive</p>
-                        <p>Measured in pixels; must be in 25px increments (100, 125, 150, ...)</p>
+                        <p>Within <span class="inline-code">200</span>&ndash;<span class="inline-code">1000</span> inclusive</p>
+                        <p>Measured in pixels; must be in 25px increments.<br>(200, 225, 250 ...)</p>
+                        <p style="font-size:15px">Also! Smaller square images are available<br>(eg: 100x100, 75x75 ...)</p>
                         
                     </div>
 
@@ -143,7 +149,7 @@
                         
                         <p>Just want a quick image and don't care about the nitty gritty?</p>
                         <p>Use just a number <span class="inline-code">0</span>&ndash;<span class="inline-code">15</span> for an instant image!</p>
-                        <p style="font-size:14px"><em>Generally,</em> the images will roughly increase in size as you go from 0 to 15.</p>
+                        <p style="font-size:15px">The images will <em>roughly</em> increase in size as you go from 0 to 15.</p>
                         
                     </div>
 
@@ -153,31 +159,30 @@
 
         <section id="random-fox">
             <h2>Example Fox Generator</h2>
+            <div class="random-url">
+                <a href="https://placefox.it/700/600/red.jpg" target="_blank" style="width: 100%">
 
-                <div class="random-url">
-                    <a href="https://placefox.it/400/600/fennec" target="_blank" style="width: 100%">
+                    <div class="code code-hover">
+                        <p>
+                            // click to check me out!
+                        </p>
+                        <p id="random-code" class="trunc">
+                            https://<span class="n">placefox.it</span>/<span class="w">700</span>/<span class="h">600</span>/<span class="t">arctic</span>.jpg
+                        </p>
+                    </div>
+                </a>
 
-                        <div class="code code-hover">
-                            <p>
-                                // click to check me out!
-                            </p>
-                            <p id="random-code" class="trunc">
-                                https://<span class="n">placefox.it</span>/<span class="w">400</span>/<span class="h">600</span>/<span class="t">fennec</span>.jpg
-                            </p>
-                        </div>
-                    </a>
-
-                    <button id="new-fox" type="button">
-                        <div class="button-content">
-                            <i class="fa-solid fa-dice-five"></i>
-                            New Fox
-                        </div>
-                    </button>
-                </div>
-                
-                <div class="fox-image">
-                    <img src="img/fen.jpeg" id="random-fox-image" class="fox" alt="fox">
-                </div>
+                <button id="new-fox" type="button">
+                    <div class="button-content">
+                        <i class="fa-solid fa-dice-five"></i>
+                        New Fox
+                    </div>
+                </button>
+            </div>
+            
+            <div class="fox-image">
+                <img src="/700/600/arctic.jpg" id="random-fox-image" class="fox" alt="Random fox image">
+            </div>
 
         </section>
 
@@ -187,8 +192,7 @@
         <div class="footer-content">
             <p>Made by <a href="https://davidkochanski.dev">David Kochanski</a>. &copy; 2023</p>
             <p>All images are artifical intelligence (AI) generated.</p>
-            <p>Please contact kochanskidavid9@gmail.com for image removal requests.</p>
-            <p>Inspired by <a href="https://placekitten.com/">placekitten</a>... which was inspired by <a href="https://placeholder.com/">placeholder.com</a></p>
+            <p>Inspired by <a href="https://placekitten.com/" target="_blank">placekitten</a>... which was inspired by <a href="https://placeholder.com/" target="_blank">placeholder.com</a></p>
         </div>
 
     </footer>

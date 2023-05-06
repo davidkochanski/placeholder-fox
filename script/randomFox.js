@@ -2,6 +2,7 @@ const button = document.getElementById("new-fox");
 const randomUrl = document.getElementById("random-code");
 const randomUrlLink = document.querySelector(".random-url > a");
 const foxImage = document.getElementById("random-fox-image");
+const dice = document.querySelector("#new-fox .fa-dice-five");
 let cooldown = false;
 
 button.onmousedown = () => {
@@ -17,11 +18,17 @@ button.onmousedown = () => {
 
     button.style.opacity = 0.33;
 
+    dice.style.transition = "rotate 1s ease";
+    dice.style.rotate = "360deg";
+
     setTimeout(() => {
         cooldown = false; 
         button.style.opacity = 1;
 
-    }, 1333);
+        dice.style.transition = "";
+        dice.style.rotate = "0deg";
+
+    }, 1500);
 }
 
 const randomFromRange = (min, max) => {
