@@ -228,12 +228,15 @@ footer a:hover {
 
 .hero-content.full-content {
     color: white;
+    text-shadow: 3px 3px 0 black;
     clip-path: inset(0 100% 0 0)
 
 }
 
 .hero-content.empty-content {
     color: black;
+    text-shadow: 2px 2px 0px white;
+
 }
 
 
@@ -348,7 +351,7 @@ section h2 {
 
 .fox-content .fox-image {
     width: 100%;
-    background-image: url(../img/blob2.svg);
+    background-image: url(../img/blob.svg);
     background-repeat: no-repeat;
     background-position: 50%;
 

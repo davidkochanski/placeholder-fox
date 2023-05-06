@@ -5,6 +5,15 @@ const foxImage = document.getElementById("random-fox-image");
 const dice = document.querySelector("#new-fox .fa-dice-five");
 let cooldown = false;
 
+const types = ["red", "arctic", "fennec"];
+const filters = ["", "", "", "-bw"]
+
+let [ newFox, newFoxUrl, newFoxPath ] = getNewFox();
+
+randomUrl.innerHTML = newFox;
+randomUrlLink.href = newFoxUrl;
+foxImage.src = newFoxPath;
+
 button.onmousedown = () => {
     if(cooldown) return;
 
@@ -31,14 +40,11 @@ button.onmousedown = () => {
     }, 1500);
 }
 
-const randomFromRange = (min, max) => {
+function randomFromRange(min, max) {
     return Math.floor(Math.random() * (max - min) + min);
 }
 
-const types = ["red", "arctic", "fennec"];
-const filters = ["", "", "", "-bw"]
-
-const getNewFox = () => {
+function getNewFox() {
     // Wildcard chance
     if(!randomFromRange(0, 10)) {
         num = randomFromRange(0,16);
