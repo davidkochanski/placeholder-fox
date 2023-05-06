@@ -9,12 +9,11 @@ button.onmousedown = () => {
 
     cooldown = true;
 
-    let [ newFox, newFoxUrl ] = getNewFox();
+    let [ newFox, newFoxUrl, newFoxPath ] = getNewFox();
 
     randomUrl.innerHTML = newFox;
     randomUrlLink.href = newFoxUrl;
-
-    foxImage.src = newFoxUrl;
+    foxImage.src = newFoxPath;
 
     button.style.opacity = 0.33;
 
@@ -30,7 +29,7 @@ const randomFromRange = (min, max) => {
 }
 
 const types = ["red", "arctic", "fennec"];
-const filters = ["", "", "", "-bw", "-one"]
+const filters = ["", "", "", "-bw"]
 
 const getNewFox = () => {
     // Wildcard chance
@@ -38,15 +37,17 @@ const getNewFox = () => {
         num = randomFromRange(0,16);
 
         return [`https://<span class="n">placefox.it</span>/<span class="x">${num}</span>.jpg`,
-                `https://placefox.it/${num}.jpg`]
+                `https://placefox.it/${num}.jpg`,
+                `${num}.jpg`]
     }
-    const width = 10 * randomFromRange(10, 100);
-    const height = 10 * randomFromRange(10, 100);
+    const width = 25 * randomFromRange(10, 40);
+    const height = 25 * randomFromRange(10, 40);
 
 
     const type = types[randomFromRange(0, types.length)];
     const filter = filters[randomFromRange(0, filters.length)];
 
     return [`https://<span class="n">placefox.it</span>/<span class="w">${width}</span>/<span class="h">${height}</span>/<span class="t">${type}</span><span class="c">${filter}</span>.jpg`,
-            `https://placefox.it//${width}/${height}/${type}${filter}.jpg`];
+            `https://placefox.it//${width}/${height}/${type}${filter}.jpg`,
+            `${width}/${height}/${type}${filter}.jpg`];
 }
