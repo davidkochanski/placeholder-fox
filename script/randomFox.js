@@ -61,6 +61,6 @@ function getNewFox() {
     const filter = filters[randomFromRange(0, filters.length)];
 
     return [`https://<span class="n">placefox.xyz</span>/<span class="w">${width}</span>/<span class="h">${height}</span>/<span class="t">${type}</span><span class="c">${filter}</span>.jpg`,
-            `https://placefox.xyz//${width}/${height}/${type}${filter}.jpg`,
+            `https://placefox.xyz/${width}/${height}/${type}${filter}.jpg`,
             `${width}/${height}/${type}${filter}.jpg`];
 }
