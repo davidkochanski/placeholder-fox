@@ -49,8 +49,8 @@ function getNewFox() {
     if(!randomFromRange(0, 10)) {
         num = randomFromRange(0,16);
 
-        return [`https://<span class="n">placefox.it</span>/<span class="x">${num}</span>.jpg`,
-                `https://placefox.it/${num}.jpg`,
+        return [`https://<span class="n">placefox.xyz</span>/<span class="x">${num}</span>.jpg`,
+                `https://placefox.xyz/${num}.jpg`,
                 `${num}.jpg`]
     }
     const width = 25 * randomFromRange(10, 40);
@@ -60,7 +60,7 @@ function getNewFox() {
     const type = types[randomFromRange(0, types.length)];
     const filter = filters[randomFromRange(0, filters.length)];
 
-    return [`https://<span class="n">placefox.it</span>/<span class="w">${width}</span>/<span class="h">${height}</span>/<span class="t">${type}</span><span class="c">${filter}</span>.jpg`,
-            `https://placefox.it//${width}/${height}/${type}${filter}.jpg`,
+    return [`https://<span class="n">placefox.xyz</span>/<span class="w">${width}</span>/<span class="h">${height}</span>/<span class="t">${type}</span><span class="c">${filter}</span>.jpg`,
+            `https://placefox.xyz//${width}/${height}/${type}${filter}.jpg`,
             `${width}/${height}/${type}${filter}.jpg`];
 }
