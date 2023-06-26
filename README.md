@@ -31,4 +31,5 @@ Access the image with your desired parameters directly in the URL, like so:
 ## Notes
 
 - Made by David Kochanski.
+- All images are AI-generated.
 - Inspired by placekitten!
