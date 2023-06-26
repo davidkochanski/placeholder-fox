@@ -15,8 +15,6 @@ Access the image with your desired parameters directly in the URL, like so:
 
 ## Parameters
 
-https://placefox.xyz/`width`/`height`/`species`-`bw (optl.)`.jpg 
-
 - The first two numbers specify the width and height of the image.
   - Must be within `200–1000` inclusive
   - In pixels, and in `25` pixel increments (200, 225, 250...)
